@@ -4,4 +4,5 @@ const config = require('../config');
 
 const app = initializeApp(config);
 const db = getFirestore(app);
+
 module.exports = db;
