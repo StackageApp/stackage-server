@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const firebaseConf = {
-  apiKey = process.env.apiKey,
+  apiKey: process.env.apiKey,
   authDomain: process.env.authDomain,
   projectId: process.env.projectId,
   storageBucket: process.env.storageBucket,
