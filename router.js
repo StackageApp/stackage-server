@@ -1,9 +1,16 @@
 const router = require('express').Router();
-const userController = require('./controllers');
+const { userController, postController } = require('./controllers');
 
 // add routes
 router.post('/users/:uid', userController.addNewUser);
 router.get('/users/:uid', userController.getUserData);
 router.patch('/users/:uid', userController.editUserData);
+router.get('/users/messages/:uid', userController.getUserMessageData);
+router.patch('/users/notifcations/reset/:uid', userController.resetUserNotifications);
+router.post('/users/messages/:uid/:uid2', userController.addUserMessage);
+router.post('/posts', postController.addNewPost);
+router.get('/posts', postController.getRecentPost);
+router.patch('/posts/:postid', postController.likePost);
+router.delete('/posts/:postid', postController.deletePost);
 
 module.exports = router;
