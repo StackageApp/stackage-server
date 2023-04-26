@@ -18,7 +18,8 @@ module.exports = {
     const postRef = await doc(db, 'posts', postid);
     const postSnap = await getDoc(postRef);
     const incrementedLike = postSnap.data().likes + 1;
-    if (incrementedLike >= 5) {
+    const isApproved = postSnap.data().isApproved;
+    if (incrementedLike >= 5 && !isApproved) {
       await updateDoc(postRef, { likes: 0, isApproved: true})
     } else {
       await updateDoc(postRef, { likes: incrementedLike})

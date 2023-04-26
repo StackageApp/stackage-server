@@ -40,7 +40,7 @@ module.exports = {
       .catch(err => {
         console.log('err incrementing likes\n', err);
       })
-  }
+  },
   dislikePost: (req, res) => {
     postModel.decrementLike(req.params.postid)
       .then(() => {

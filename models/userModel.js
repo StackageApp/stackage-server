@@ -35,15 +35,15 @@ module.exports = {
     const userRef = doc(db, 'users', uid);
     const userSnap = await getDoc(userRef);
     const userData = userSnap.data();
-    if (!userData.messages[messages.senderUid]) {
+    if (!userData.messages[message.senderUid]) {
       userData.messages[message.senderUid] = [];
     }
     userData.messages[message.senderUid].push(message);
-    userData.notifcations++;
+    userData.notifications++;
 
     await updateDoc(userRef, {
       messages: userData.messages,
-      notifcations: userData.notifcations,
+      notifications: userData.notifications,
     })
   }
 };

@@ -51,7 +51,7 @@ module.exports = {
       .then(() => {
         userModel.addMessage(req.params.uid2, req.body.message)
           .then(() => {
-            res.status(200);
+            res.sendStatus(201);
           })
       })
       .catch(err => {
