@@ -45,5 +45,6 @@ module.exports = {
       messages: userData.messages,
       notifications: userData.notifications,
     })
-  }
+  },
+
 };

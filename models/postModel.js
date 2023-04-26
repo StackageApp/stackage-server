@@ -38,5 +38,12 @@ module.exports = {
   deletePost: async (postid) => {
     const postRef = await doc(db, 'posts', postid);
     await deleteDoc(postRef);
+  },
+  addComment: async (uid, comment) => {
+    const postRef = doc(db, 'posts', uid);
+    const postSnap = await getDoc(postRef);
+    const postData = postSnap.data();
+    postData.comments.push(comment);
+    await updateDoc(postRef, { comments: postData.comments });
   }
 };

@@ -58,5 +58,14 @@ module.exports = {
       .catch(err => {
         console.log('err deleting from server\n', err);
       })
+  },
+  addComment: (req, res) => {
+    postModel.addComment(req.params.uid, req.body.comment)
+      .then(() => {
+        res.sendStatus(201)
+      })
+      .catch(err => {
+        console.log('err adding comment\n', err)
+      })
   }
 }
