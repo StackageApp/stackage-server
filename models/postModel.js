@@ -6,11 +6,14 @@ module.exports = {
     const postRef = await doc(collection(db, 'posts'))
     await setDoc(postRef, postInfo);
   },
-  getPosts: async (category = null) => {
+  getPosts: async (category = null, uid = null) => {
     const postRef = await collection(db, 'posts')
     let q = await query(postRef, orderBy('timestamp', 'desc'));
     if (category) {
       q = query(postRef, where('category', '==', category), orderBy('timestamp', 'desc'));
+    }
+    if (uid) {
+      q = query(postRef, where('uid', '==', uid), orderBy('timestamp', 'desc'));
     }
     return await getDocs(q);
   },

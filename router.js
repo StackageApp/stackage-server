@@ -14,6 +14,8 @@ router.post('/posts', postController.addNewPost);
 router.get('/posts', postController.getRecentPost);
 router.patch('/posts/:postid', postController.likePost);
 router.delete('/posts/:postid', postController.deletePost);
-router.post('/posts/comments/:uid', postController.addComment);
+router.post('/posts/comments/:postid', postController.addComment);
+
+
 
 module.exports = router;

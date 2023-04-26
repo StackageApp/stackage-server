@@ -23,7 +23,7 @@ module.exports = {
       })
   },
   getRecentPost: (req, res) => {
-    postModel.getPosts(req.query.category)
+    postModel.getPosts(req.query.category, req.query.uid)
       .then(data => {
         data = data.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         res.json(data);
@@ -60,7 +60,7 @@ module.exports = {
       })
   },
   addComment: (req, res) => {
-    postModel.addComment(req.params.uid, req.body.comment)
+    postModel.addComment(req.params.postid, req.body.comment)
       .then(() => {
         res.sendStatus(201)
       })
