@@ -31,16 +31,18 @@ module.exports = {
     const userRef = doc(db, 'users', uid);
     await updateDoc(userRef, { notifcations: 0 });
   },
-  addMessage: async (uid, message) => {
+  addMessage: async (uid, uid2, message, increment) => {
     const userRef = doc(db, 'users', uid);
     const userSnap = await getDoc(userRef);
     const userData = userSnap.data();
-    if (!userData.messages[message.senderUid]) {
-      userData.messages[message.senderUid] = [];
+    console.log(uid);
+    if (!userData.messages[uid2]) {
+      userData.messages[uid2] = [];
     }
-    userData.messages[message.senderUid].push(message);
-    userData.notifications++;
-
+    userData.messages[uid2].push(message);
+    if (increment) {
+      userData.notifications++;
+    }
     await updateDoc(userRef, {
       messages: userData.messages,
       notifications: userData.notifications,
