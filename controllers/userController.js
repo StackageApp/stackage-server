@@ -47,9 +47,9 @@ module.exports = {
       })
   },
   addUserMessage: (req, res) => {
-    userModel.addMessage(req.params.uid, req.body.message, false)
+    userModel.addMessage(req.params.uid, req.params.uid2, req.body.message, false)
       .then(() => {
-        userModel.addMessage(req.params.uid2, req.body.message, true)
+        userModel.addMessage(req.params.uid2, req.params.uid, req.body.message, true)
           .then(() => {
             res.sendStatus(201);
           })
