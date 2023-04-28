@@ -32,7 +32,7 @@ module.exports = {
     const postRef = await doc(db, 'posts', postid);
     const postSnap = await getDoc(postRef);
     const decrementedDislike = postSnap.data().likes - 1;
-    if (decrementedDislike <= -5 && !getPosts.data().isApproved) {
+    if (decrementedDislike <= -5 && !postSnap.data().isApproved) {
       await deleteDoc(postRef);
     } else {
       await updateDoc(postRef, { likes: decrementedDislike})
