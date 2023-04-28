@@ -13,7 +13,7 @@ router.post('/users/messages/:uid/:uid2', userController.addUserMessage);
 router.post('/posts', postController.addNewPost);
 router.get('/posts', postController.getRecentPost);
 router.patch('/posts/like/:postid', postController.likePost)
-router.patch('/posts/dislike/:postid', postController.likePost);
+router.patch('/posts/dislike/:postid', postController.dislikePost);
 router.delete('/posts/:postid', postController.deletePost);
 router.post('/posts/comments/:postid', postController.addComment);
 

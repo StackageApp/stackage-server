@@ -1,4 +1,4 @@
-const { doc, getDoc, setDoc, updateDoc, collection, query, orderBy, getDocs, where } = require('firebase/firestore')
+const { doc, getDoc, setDoc, updateDoc, collection, query, orderBy, getDocs, where, deleteDoc } = require('firebase/firestore')
 const db = require('../database');
 
 module.exports = {
@@ -28,14 +28,14 @@ module.exports = {
       await updateDoc(postRef, { likes: incrementedLike})
     }
   },
-  decrementDislike: async (postid) => {
+  decrementLike: async (postid) => {
     const postRef = await doc(db, 'posts', postid);
     const postSnap = await getDoc(postRef);
-    const decrementedDislike = postSnap.data().dislikes - 1;
+    const decrementedDislike = postSnap.data().likes - 1;
     if (decrementedDislike <= -5) {
       await deleteDoc(postRef);
     } else {
-      await updateDoc(postRef, { dislikes: decrementedDislike})
+      await updateDoc(postRef, { likes: decrementedDislike})
     }
   },
   deletePost: async (postid) => {
