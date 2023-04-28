@@ -29,7 +29,7 @@ module.exports = {
   },
   resetNotifcations: async (uid) => {
     const userRef = doc(db, 'users', uid);
-    await updateDoc(userRef, { notifcations: 0 });
+    await updateDoc(userRef, { notifications: 0 });
   },
   addMessage: async (uid, uid2, message, increment) => {
     const userRef = doc(db, 'users', uid);
