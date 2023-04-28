@@ -7,7 +7,7 @@ router.get('/users/:uid', userController.getUserData);
 router.patch('/users/:uid', userController.editUserData);
 
 router.get('/users/messages/:uid', userController.getUserMessageData);
-router.patch('/users/notifcations/reset/:uid', userController.resetUserNotifications);
+router.patch('/users/notifications/reset/:uid', userController.resetUserNotifications);
 router.post('/users/messages/:uid/:uid2', userController.addUserMessage);
 
 router.post('/posts', postController.addNewPost);
