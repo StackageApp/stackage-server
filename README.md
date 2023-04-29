@@ -3,7 +3,7 @@
 This is an Express server that uses Firestore for database operations. It provides RESTful endpoints for performing CRUD operations on data stored in a Firestore database. It is meant for a mobile app called Stackage, a community-driven app connecting tech enthusiants allowing them to share ideas/resources/best practices.
 
 
-##Prerequisites
+##Prerequisites##
 
 Before you can use this server, you must have the following installed on your system:
 
@@ -14,7 +14,7 @@ Before you can use this server, you must have the following installed on your sy
 You must also have a Firebase project set up with a Cloud Firestore instance.
 
 
-##Installation
+##Installation##
 
 To install the server, clone the repository from GitHub:
 
@@ -25,7 +25,7 @@ Then, install the dependencies using npm:
     npm install
 
 
-##Configuration
+##Configuration##
 
 To configure the server, you need to set up your Firebase project credentials in a .env file. You can use the .env.example file in the project as a template:
 
@@ -41,7 +41,7 @@ measurementId=your_firebase_measurement_id
 You can find your Firebase project credentials in the Firebase console under Project settings > Service accounts.
 
 
-##Usage
+##Usage##
 
 To start the server, run the following command:
 
