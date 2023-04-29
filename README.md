@@ -29,14 +29,14 @@ Configuration
 
 To configure the server, you need to set up your Firebase project credentials in a .env file. You can use the .env.example file in the project as a template:
 
-PORT=your_port
-apiKey=your_firebase_api_key
-authDomain=your_firebase_auth_domain
-projectId=your_firebase_project_id
-storageBucket=your_firebase_storage_bucket
-messagingSenderId=your_firebase_messaging_sender_id
-appId=your_firebase_app_id
-measurementId=your_firebase_measurement_id
+PORT=your_port  
+apiKey=your_firebase_api_key  
+authDomain=your_firebase_auth_domain  
+projectId=your_firebase_project_id  
+storageBucket=your_firebase_storage_bucket  
+messagingSenderId=your_firebase_messaging_sender_id  
+appId=your_firebase_app_id  
+measurementId=your_firebase_measurement_id  
 
 You can find your Firebase project credentials in the Firebase console under Project settings > Service accounts.
 
