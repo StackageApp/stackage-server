@@ -18,7 +18,7 @@ You must also have a Firebase project set up with a Cloud Firestore instance.
 
 To install the server, clone the repository from GitHub:
 ```
-    git clone https://github.com/your_username/your_repository.git
+    git clone https://github.com/StackageApp/stackage-server.git
 ```
 Then, install the dependencies using npm:
 ```
